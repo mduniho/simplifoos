@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpli.foos - Foosball Standings and Match Initiations</title>
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/styles/jquery.dataTables.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="assets/styles/simplifoos.css" media="screen" />
+
+<script type="text/javascript" src="assets/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+
+<script>
+
+/* Data imported from foosball_players.json */
+
+$(document).ready(function (){
+    var json = {
+      foosball_players : [
+        {
+		  "first_name": "Joel",
+		  "last_name": "Sims",
+		  "department": "RTB",
+		  "wins": 24,
+		  "losses": 22,
+		  "games": 46
+		},
+		{
+		  "first_name": "Winston",
+		  "last_name": "Boyd",
+		  "department": "App",
+		  "wins": 12,
+		  "losses": 36,
+		  "games": 48
+		},
+		{
+		  "first_name": "Armando",
+		  "last_name": "Fitzgerald",
+		  "department": "App",
+		  "wins": 32,
+		  "losses": 12,
+		  "games": 44
+		},
+		{
+		  "first_name": "Nicholas",
+		  "last_name": "Garner",
+		  "department": "AdOps",
+		  "wins": 23,
+		  "losses": 32,
+		  "games": 55
+		},
+		{
+		  "first_name": "Lynda",
+		  "last_name": "Ford",
+		  "department": "RTB",
+		  "wins": 27,
+		  "losses": 22,
+		  "games": 49
+		},
+		{
+		  "first_name": "Marvin",
+		  "last_name": "Pierce",
+		  "department": "Data",
+		  "wins": 14,
+		  "losses": 26,
+		  "games": 40
+		},
+		{
+		  "first_name": "Leslie",
+		  "last_name": "Barber",
+		  "department": "RTB",
+		  "wins": 20,
+		  "losses": 16,
+		  "games": 36
+		},
+		{
+		  "first_name": "Nicole",
+		  "last_name": "Gilbert",
+		  "department": "Data",
+		  "wins": 13,
+		  "losses": 37,
+		  "games": 50
+		},
+		{
+		  "first_name": "Gregg",
+		  "last_name": "Dean",
+		  "department": "RTB",
+		  "wins": 10,
+		  "losses": 32,
+		  "games": 42
+		},
+		{
+		  "first_name": "Brett",
+		  "last_name": "Griffith",
+		  "department": "Data",
+		  "wins": 25,
+		  "losses": 25,
+		  "games": 50
+		},
+		{
+		  "first_name": "Michael",
+		  "last_name": "Warren",
+		  "department": "AdOps",
+		  "wins": 26,
+		  "losses": 30,
+		  "games": 56
+		},
+		{
+		  "first_name": "Victor",
+		  "last_name": "Miller",
+		  "department": "App",
+		  "wins": 9,
+		  "losses": 42,
+		  "games": 51
+		},
+		{
+		  "first_name": "Kent",
+		  "last_name": "Nunez",
+		  "department": "AdOps",
+		  "wins": 32,
+		  "losses": 13,
+		  "games": 45
+		},
+		{
+		  "first_name": "Dolores",
+		  "last_name": "Vega",
+		  "department": "App",
+		  "wins": 22,
+		  "losses": 27,
+		  "games": 49
+		},
+		{
+		  "first_name": "Ray",
+		  "last_name": "Briggs",
+		  "department": "Data",
+		  "wins": 40,
+		  "losses": 12,
+		  "games": 52
+		}
+      ]
+    };
+
+    var data = jQuery.map(json.foosball_players, function(el, i) {
+      return [[el.first_name, el.last_name, el.department, el.wins, el.wins, el.losses, el.games]];
+    });
+
+    $('#stats').dataTable( {
+      "aaData": data,
+      columns: [
+			{ title: "First Name" },
+			{ title: "Last Name" },
+			{ title: "Department" },
+			{ title: "Wins" },
+			{ title: "Losses" },
+			{ title: "Win Percentage" }
+		],
+		
+		/* Requested department filter */
+		"columnDefs": [
+			{ type: "department", targets: 0 }
+		]
+	});
+});
+
+/*  MICAH NOTES:  If we were server-side or running a local server, this method below would work to load the JSON file provided.  Datatables uses the property "ajax" to load the $.getJSON() function.
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        ajax: "foosball_players.json",
+        columns: [
+            { title: "First Name" },
+            { title: "Last Name" },
+            { title: "Department" },
+            { title: "Wins" },
+            { title: "Losses" },
+            { title: "Win Percentage" }
+        ]
+    } );
+} );
+
+*/
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="page-header">
+    	<div class="page-header-left"><img src="assets/images/logo_simplifi.png" alt="Simpli.fi - Simpli.foos" /></div>
+        <div class="page-header-right">Sign in | Register</div>
+    </div>
+    <div class="leftColumn">
+    	<div class="leftColumn-header">Standings</div>
+        <div class="contentArea">
+        	<table id="stats" class="display" cellspacing="0" width="100%"></table>
+        </div>
+    </div>
+    <div class="rightColumn">
+    	<div class="rightColumn-header">Join Match</div>
+        <div class="contentArea">
+        	<p>Please select one of the open slots to join the match!</p>
+        	<div class="picContainer">
+                <div class="picLeft"><img src="assets/images/profilePic_fillion.png" alt="Fillion" /></div>
+                <div class="picRight"><img src="assets/images/profilePic_placeholder.png" alt="Open" /></div>
+            </div>
+            
+            <div style="clear:both; margin: 0 auto; width: 191px;"><img src="assets/images/foosballTable.png" alt="foosball table" /></div>
+            
+            <div class="picContainer">
+                <div class="picLeft"><img src="assets/images/profilePic_stewart.png" alt="Stewart" /></div>
+                <div class="picRight"><img src="assets/images/profilePic_placeholder.png" alt="Fillion" /></div>
+            </div>
+            
+            <div>
+            	<div style="clear:both; margin-bottom: 10px;"></div>
+            	<div class="button">Begin Match</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

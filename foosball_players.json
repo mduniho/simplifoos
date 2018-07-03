@@ -1,0 +1,124 @@
+{
+  "foosball_players": [
+    {
+      "first_name": "Joel",
+      "last_name": "Sims",
+      "department": "RTB",
+      "wins": 24,
+      "losses": 22,
+      "games": 46
+    },
+    {
+      "first_name": "Winston",
+      "last_name": "Boyd",
+      "department": "App",
+      "wins": 12,
+      "losses": 36,
+      "games": 48
+    },
+    {
+      "first_name": "Armando",
+      "last_name": "Fitzgerald",
+      "department": "App",
+      "wins": 32,
+      "losses": 12,
+      "games": 44
+    },
+    {
+      "first_name": "Nicholas",
+      "last_name": "Garner",
+      "department": "AdOps",
+      "wins": 23,
+      "losses": 32,
+      "games": 55
+    },
+    {
+      "first_name": "Lynda",
+      "last_name": "Ford",
+      "department": "RTB",
+      "wins": 27,
+      "losses": 22,
+      "games": 49
+    },
+    {
+      "first_name": "Marvin",
+      "last_name": "Pierce",
+      "department": "Data",
+      "wins": 14,
+      "losses": 26,
+      "games": 40
+    },
+    {
+      "first_name": "Leslie",
+      "last_name": "Barber",
+      "department": "RTB",
+      "wins": 20,
+      "losses": 16,
+      "games": 36
+    },
+    {
+      "first_name": "Nicole",
+      "last_name": "Gilbert",
+      "department": "Data",
+      "wins": 13,
+      "losses": 37,
+      "games": 50
+    },
+    {
+      "first_name": "Gregg",
+      "last_name": "Dean",
+      "department": "RTB",
+      "wins": 10,
+      "losses": 32,
+      "games": 42
+    },
+    {
+      "first_name": "Brett",
+      "last_name": "Griffith",
+      "department": "Data",
+      "wins": 25,
+      "losses": 25,
+      "games": 50
+    },
+    {
+      "first_name": "Michael",
+      "last_name": "Warren",
+      "department": "AdOps",
+      "wins": 26,
+      "losses": 30,
+      "games": 56
+    },
+    {
+      "first_name": "Victor",
+      "last_name": "Miller",
+      "department": "App",
+      "wins": 9,
+      "losses": 42,
+      "games": 51
+    },
+    {
+      "first_name": "Kent",
+      "last_name": "Nunez",
+      "department": "AdOps",
+      "wins": 32,
+      "losses": 13,
+      "games": 45
+    },
+    {
+      "first_name": "Dolores",
+      "last_name": "Vega",
+      "department": "App",
+      "wins": 22,
+      "losses": 27,
+      "games": 49
+    },
+    {
+      "first_name": "Ray",
+      "last_name": "Briggs",
+      "department": "Data",
+      "wins": 40,
+      "losses": 12,
+      "games": 52
+    }
+  ]
+}

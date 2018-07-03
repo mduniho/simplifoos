@@ -7,7 +7,7 @@ Requirements
 ------------
 
 1.  A foosball game can be initiated by any registered user, and subsequently joined by other registered users.  
-To minimize the number of pages and actions the app would need to make, the entire process is contained to 3 pages.  Registration and Sign in are in the upper right corner, and would be replaced with "Welcome, {Player's Name}!" once the user either registers or signs in.
+To minimize the number of pages and actions the app would need to make, the entire process is contained to 3 pages.  Registration and Sign in are in the upper right corner, and would be replaced with "Welcome, {Player's Name}!" once the user either registers or signs in.  
 
 The landing page always has the Standings information since a typical user, I would expect, would go on to research this information.  This is available immediately in the first wider column.  Column two contains everything for initiating a match.
 
